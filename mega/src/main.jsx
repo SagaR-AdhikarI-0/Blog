@@ -10,6 +10,7 @@ import Home from "./Pages/Home.jsx";
 import Protcted from "./Components/AuthLayout.jsx";
 import { Provider } from "react-redux";
 import store from "./Store/store.js";
+import Post from './Pages/Post.jsx'
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 const router = createBrowserRouter([
   {
@@ -48,6 +49,20 @@ const router = createBrowserRouter([
           </Protcted>
         ),
       },
+      {
+        path: "/edit-post/:slug",
+        element: (
+            <Protcted authentication>
+                {" "}
+                {/* <EditPost /> */}
+            </Protcted>
+        ),
+    },
+    {
+        path: "/post/:slug",
+        element: <Post />,
+    },
+
     ],
   },
 ]);

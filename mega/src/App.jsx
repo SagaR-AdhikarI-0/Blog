@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import "./App.css";
 import { useDispatch } from "react-redux";
 import authService from "./Appwrite/auth";
 import { login, logout } from "./Store/authSlice";
@@ -21,16 +20,18 @@ function App() {
       .finally(() => setLoading(false));
   }, []);
   return !loading ? (
+    <>
+    <Header />
     <div className="min-h-screen">
       <div>
-        <Header />
-        <main>
+        <main className="">
           <Outlet />
         </main>
         <Footer />
       </div>
     </div>
-  ) : null;
+    </> ) : null;
+ 
 }
 
 export default App;

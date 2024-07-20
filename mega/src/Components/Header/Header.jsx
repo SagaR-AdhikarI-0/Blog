@@ -15,23 +15,24 @@ function Header() {
   ];
 
   return (
-    <header className="bg-red-500">
+    <header className="w-screen sticky top-0 bg-black bg-opacity-75 z-50  ">
       <Container>
         <nav>
-          <div className="bg-red-500 flex items-center ">
-            <Logo />
-            <ul className='flex p-3'> 
+          <div className=" flex items-center justify-between p-4 font-bold text-white text-shadow ">
+            <Logo className={"text-2xl"} />
+            <ul className='flex p-1'> 
               {navitems.map((item) =>(
                 item.active ?
                   <li key={item.name}>
-                    <button onClick={() => navigate(item.slug)} className="m-1 bg-red-500">
+                    <button onClick={() => navigate(item.slug)} className="m-1">
                       {item.name}
                     </button>
                   </li>
                 :null)
               )}
+              {authStatus && <LogoutBtn/>}
             </ul>
-            {authStatus && <LogoutBtn/>}
+            
           </div>
         </nav>
       </Container>

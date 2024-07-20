@@ -1,8 +1,8 @@
 import React from 'react'
 
-function Container({children}) {
+function Container({children ,className}) {
   return (
-    <div className='p-2'>
+    <div className={className}>
       {children}
     </div>
   )
